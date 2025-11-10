@@ -14,6 +14,15 @@ export const PersonModel = sequelize.define(
       allowNull: false,
       field: "lastname"
     },
+    dni: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 8,
+        max: 8
+      },
+      field: "dni"
+    }
+
   },
   {
     paranoid: true,
