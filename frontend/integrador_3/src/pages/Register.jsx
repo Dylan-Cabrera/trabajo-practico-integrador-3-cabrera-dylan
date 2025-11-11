@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { useForm } from "../hooks/useForm"
 
 export const Register = () => {
@@ -32,6 +33,7 @@ export const Register = () => {
 
 
   return (
+    <> 
     <form onSubmit={handleRegister}>
         <label htmlFor="username"> Username </label>
         <input type="text" name="username" value={form.username} onChange={handleChange} />
@@ -43,7 +45,13 @@ export const Register = () => {
         <input type="text" name="name" value={form.name} onChange={handleChange} />
         <label htmlFor="lastname"> Lastname </label>
         <input type="text" name="lastname" value={form.lastname} onChange={handleChange} />
-    <button type="submit"> Envíar </button>
+        <button type="submit"> Envíar </button>
     </form>
+
+    <span>
+      <p>¿Ya tienes una cuenta?</p>
+        <Link to="/login"> Inicia sesión </Link>
+    </span>
+    </>
   )
 }
