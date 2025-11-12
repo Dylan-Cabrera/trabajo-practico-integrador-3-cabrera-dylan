@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router"
 import { useForm } from "../hooks/useForm"
+import { useContext } from "react"
+import { AuthContext } from "../context/authContext"
 
 export const Login = () => {
     const {form, handleChange} = useForm({
@@ -7,6 +9,7 @@ export const Login = () => {
         password: ""
     })
     const navigate = useNavigate()
+    const {handleLoginAuth} = useContext(AuthContext);
 
     const handleLogin = async (event) => {
         event.preventDefault()
@@ -23,16 +26,15 @@ export const Login = () => {
             const data =  await peticion.json()
 
             if(!data) {
-                localStorage.setItem("isLogged", "False")
                 return alert(data.message)
             }
 
-            localStorage.setItem("isLogged", "True")
+            handleLoginAuth()// <----------------
             alert(data.message)
             
         } catch (error) {
             console.log(error)
-            localStorage.setItem("isLogged", "False")
+            handleAuth(false)
         }
         navigate("/home")
     }

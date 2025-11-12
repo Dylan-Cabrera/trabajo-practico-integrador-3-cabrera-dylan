@@ -1,4 +1,4 @@
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 import { useForm } from "../hooks/useForm"
 
 export const Register = () => {
@@ -9,10 +9,11 @@ export const Register = () => {
     name: "",
     lastname: "",
   })
-
+  const navigate = useNavigate()
 
   const handleRegister = async (event) => {
-    event.preventDefault()
+   try {
+     event.preventDefault()
 
     const peticion = await fetch("http://localhost:3000/api/register", {
       credentials: "include",
@@ -29,6 +30,10 @@ export const Register = () => {
       return alert(data.message)
     }
     alert(data.message)
+   } catch (error) {
+    console.log(error)
+   }
+   navigate("/login")
   }
 
 

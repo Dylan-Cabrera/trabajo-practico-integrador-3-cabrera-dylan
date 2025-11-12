@@ -1,9 +1,8 @@
-import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer>
-        <p> © 2025 IPF | Todos los derechos reservados </p>
+    <footer className="bg-gray-700 h-10 w-screen">
+        <p className="text-center"> © 2025 IPF | Todos los derechos reservados </p>
     </footer>
   )
 }
