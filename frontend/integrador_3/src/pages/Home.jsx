@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <>
     <div className='h-100'>
-
+    <p>soy un home</p>
     </div>
     </>
   )
