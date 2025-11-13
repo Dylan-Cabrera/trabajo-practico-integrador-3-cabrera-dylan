@@ -1,13 +1,17 @@
-import { useContext } from "react"
 import { Navigate, Outlet } from "react-router"
-import { AuthContext } from "../context/authContext"
+import { Navbar } from "../components/Navbar"
+import { useAuth } from "../hooks/useAuth"
+import { Footer } from "../components/Footer"
 
 
 export const PublicRoutes = () => {
-    const {auth} = useContext(AuthContext)
-    console.log(auth + " desde public")
-    console.log(typeof auth)
 
-  return auth === false ? ( <Outlet/> )
+  return !false ? (
+    <>
+    <Navbar/>
+    <Outlet/>
+    <Footer/>
+    </>
+   )
   : ( <Navigate to="/home"/>)
 }

@@ -44,7 +44,7 @@ export const createTask = async (req, res) => {
       is_completed,
       user_id: userLoggedId,
     });
-    res.status(201).json(newTask);
+    res.status(201).json({message: "Tarea creada correctamente"});
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: 'Error interno del servidor' });

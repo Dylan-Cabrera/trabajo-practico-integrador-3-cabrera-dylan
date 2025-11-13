@@ -39,14 +39,12 @@ export const Profile = () => {
 
   return (
     <>
-    <Navbar/>
     <div>
     <h1> Perfil </h1>
     <h3> Id: {profile?.id}  </h3>
     <h3> Nombre: {profile?.name} </h3>
     <h3> Apellido: {profile?.lastname}  </h3>
-    </div> 
-    <Footer/>
+    </div>
     </>
   )
 }

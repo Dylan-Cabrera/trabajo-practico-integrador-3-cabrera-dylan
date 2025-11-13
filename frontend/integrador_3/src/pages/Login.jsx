@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router"
+import { useAuth } from "../hooks/useAuth"
 import { useForm } from "../hooks/useForm"
-import { useContext } from "react"
-import { AuthContext } from "../context/authContext"
 
 export const Login = () => {
+    const {onLogin} = useAuth
     const {form, handleChange} = useForm({
         username: "",
         password: ""
     })
     const navigate = useNavigate()
-    const {handleLoginAuth} = useContext(AuthContext);
 
     const handleLogin = async (event) => {
         event.preventDefault()
@@ -29,7 +28,6 @@ export const Login = () => {
                 return alert(data.message)
             }
 
-            handleLoginAuth()// <----------------
             alert(data.message)
             
         } catch (error) {
