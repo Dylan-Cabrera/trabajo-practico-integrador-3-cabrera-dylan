@@ -15,9 +15,6 @@ export const useForm = (initialForm) => {
         setForm(initialForm)
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault() //faltan cosas aca
-    }
 
   return {form, handleChange, handleReset}
 }

@@ -1,28 +1,27 @@
 import { useNavigate } from "react-router"
-import { useAuth } from "../hooks/useAuth"
 import { useForm } from "../hooks/useForm"
+import { useEffect } from "react"
 
 export const Login = () => {
-    const {onLogin} = useAuth
     const {form, handleChange} = useForm({
-        username: "",
-        password: ""
+        "username": "",
+        "password": ""
     })
     const navigate = useNavigate()
 
     const handleLogin = async (event) => {
         event.preventDefault()
         try {
-            const peticion = await fetch("http://localhost:3000/api/login", {
-                method: "POST",
-                credentials: "include",
-                body: JSON.stringify(form),
-                headers: {
-                    "Content-type": "application/json"
-                }
-            })
+            const response = await fetch("http://localhost:3000/api/login",{
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(form),
+            headers: {
+            "Content-type": "application/json"
+            }
+        });
 
-            const data =  await peticion.json()
+            const data =  await response.json()
 
             if(!data) {
                 return alert(data.message)
@@ -32,10 +31,10 @@ export const Login = () => {
             
         } catch (error) {
             console.log(error)
-            handleAuth(false)
         }
         navigate("/home")
     }
+
 
   return (
     <form onSubmit={handleLogin}>

@@ -13,16 +13,16 @@ export const AppRouter = () => {
  
   return (
     <Routes>
-      <Route>
+      <Route element={<PublicRoutes  />}>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>} />
       </Route>
-      {/* <Route element={<PrivateRoutes />} > */}
+      <Route element={<PrivateRoutes />} >
           <Route path="/home" element={<Home/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/tasks" element={<Task/>}/>
           <Route path="/createtasks" element={<CreateTask/>}/>
-      {/* </Route> */}
+      </Route>
           <Route path="*" element={<Navigate to="/home"/>}/>
     </Routes>
   )
