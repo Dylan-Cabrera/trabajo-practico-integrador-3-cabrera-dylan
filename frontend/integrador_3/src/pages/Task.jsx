@@ -57,6 +57,19 @@ export const Task = () => {
         }
     }   
 
+    const handleDelete = async (event, id) => {
+        event.preventDefault()
+        try {
+            const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+                method: "DELETE",
+                credentials: "include",
+            });
+            if(response.ok) alert('Tarea borrada correctamente')
+        } catch (error) {
+            
+        }
+    }
+
     const actualTask = (task) => {
         setTask({...task,
             hide: false}
@@ -77,7 +90,7 @@ export const Task = () => {
             <h3> Estado: {task.is_completed ? "Completada" : "Pendiente"} </h3>
             <h3> Date: {task.createdAt} </h3>
             <button onClick={() => actualTask(task)}> Actualizar </button>
-            <button> Eliminar </button>
+            <button onClick={(event) => handleDelete(event, task.id)}> Eliminar </button>
         </div>
     ))}
 
