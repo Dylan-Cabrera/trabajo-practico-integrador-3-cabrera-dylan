@@ -51,17 +51,21 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="flex justify-between h-10 max-h-screen bg-gray-600 items-center">
+    <nav className="flex justify-between items-center bg-blue-950 px-4 py-2">
       {
         navStatus == "authenticated" ? (
           <>
-            <button> <Link to="/home"> Home </Link> </button>            
-            <button> <Link to="/profile"> Profile </Link> </button>            
-            <button> <Link to="/tasks"> Tasks </Link> </button>            
-            <button onClick={handleLogout} > Logout </button>
+          <div className="flex gap-4">
+            <button> <Link className="text-white hover:underline " to="/home"> Home </Link> </button>            
+            <button> <Link className="text-white hover:underline" to="/profile"> Profile </Link> </button>            
+            <button> <Link className="text-white hover:underline"  to="/tasks"> Tasks </Link> </button>            
+            <button className="text-white hover:underline" onClick={handleLogout} > Logout </button>
+          </div>
           </>) : (<>
-            <button> <Link to="/login"> Login </Link> </button>            
-            <button> <Link to="/register"> Register </Link> </button>            
+          <div className="flex gap-4">
+            <button> <Link className="text-white hover:underline" to="/login"> Login </Link> </button>            
+            <button> <Link className="text-white hover:underline" to="/register"> Register </Link> </button>            
+          </div>
           </>)
       }
             

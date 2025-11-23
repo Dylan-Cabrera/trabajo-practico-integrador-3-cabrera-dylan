@@ -73,17 +73,17 @@ export const Home = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4 m-2">
         
-        <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center">
+        <div className="bg-blue-500 border border-gray-300 rounded-lg p-4 text-center">
           <p className="text-gray-700 font-medium">Total</p>
           <p className="text-2xl font-semibold text-gray-900">{totalTasks}</p>
         </div>
 
-        <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center">
+        <div className="bg-green-500 border border-gray-300 rounded-lg p-4 text-center">
           <p className="text-gray-700 font-medium">Completadas</p>
           <p className="text-2xl font-semibold text-gray-900">{completedTasks}</p>
         </div>
 
-        <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center">
+        <div className="bg-red-500 border border-gray-300 rounded-lg p-4 text-center">
           <p className="text-gray-700 font-medium">Pendientes</p>
           <p className="text-2xl font-semibold text-gray-900">{pendingTasks}</p>
         </div>

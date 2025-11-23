@@ -39,11 +39,13 @@ export const Profile = () => {
 
   return (
     <>
-    <div>
-    <h1> Perfil </h1>
-    <h3> Id: {profile?.id}  </h3>
-    <h3> Nombre: {profile?.name} </h3>
-    <h3> Apellido: {profile?.lastname}  </h3>
+    <div className=" flex justify-center p-10 bg-blue-200">
+        <section className="bg-blue-500 rounded-lg p-5 w-100 text-center">
+            <h1 className="font-medium"> Perfil </h1>
+            <h3 className="font-medium "> Id: {profile?.id}  </h3>
+            <h3 className="font-medium "> Nombre: {profile?.name} </h3>
+            <h3 className="font-medium "> Apellido: {profile?.lastname}  </h3>
+        </section>
     </div>
     </>
   )
