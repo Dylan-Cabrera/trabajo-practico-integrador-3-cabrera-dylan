@@ -84,19 +84,21 @@ export const Task = () => {
   return (
     <>
     {tasks.map((task) => (
-        <div className="flex justify-around" key={task.id}>
-            <h3> Title: {task.title} </h3>
-            <h3> Description: {task.description} </h3>
-            <h3> Estado: {task.is_completed ? "Completada" : "Pendiente"} </h3>
-            <h3> Date: {task.createdAt} </h3>
-            <button onClick={() => actualTask(task)}> Actualizar </button>
-            <button onClick={(event) => handleDelete(event, task.id)}> Eliminar </button>
+        <div className="flex justify-between items-center w-100 bg-white p-4 rounded-md m-2 border border-gray-200" key={task.id}>
+            <div className="flex flex-col">
+                <h3> Title: {task.title} </h3>
+                <h3> Description: {task.description} </h3>
+                <h3> Estado: {task.is_completed ? "Completada" : "Pendiente"} </h3>
+                <h3> Date: {task.createdAt} </h3>
+            </div>
+            <button className="bg-blue-700 text-white px-3 py-1 w-24 h-10 rounded hover:bg-blue-800 transition" onClick={() => actualTask(task)}> Actualizar </button>
+            <button className="bg-blue-700 text-white px-3 py-1 w-24 h-10 ml-5 rounded hover:bg-blue-800 transition" onClick={(event) => handleDelete(event, task.id)}> Eliminar </button>
         </div>
     ))}
 
 
     {task.hide  ?(<div></div>) :(<>
-            <form  className="bg-amber-200 h-10 flex row justify-around" onSubmit={(event)=>handleUpdate(event,task.id)}>
+            <form  className="bg-gray-100 rounded-md p-4 flex flex-wrap gap-3  items-center m-3 border border-gray-300" onSubmit={(event)=>handleUpdate(event,task.id)}>
                 <label htmlFor="title" > Title </label>
                 <input type="text" name="title" defaultValue={task.title} onChange={handleChange} />
                 <label htmlFor="description"> Description </label>
@@ -107,7 +109,7 @@ export const Task = () => {
                 </form>
             </>)}
 
-    <button> <Link to="/createtasks"> Crear nueva tarea </Link> </button>
+    <button className="bg-green-600 text-white px-4 py-2 rounded mt-4 hover:bg-green-700"> <Link to="/createtasks"> Crear nueva tarea </Link> </button>
     </>
   )
 }
