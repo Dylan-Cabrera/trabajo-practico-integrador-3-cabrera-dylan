@@ -71,7 +71,7 @@ export const Home = () => {
         Estadísticas de tareas:
       </h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4 m-2">
+      <div className=" grid grid-cols-1 sm:grid-cols-3 gap-4 px-4 m-2">
         
         <div className="bg-blue-500 border border-gray-300 rounded-lg p-4 text-center">
           <p className="text-gray-700 font-medium">Total</p>

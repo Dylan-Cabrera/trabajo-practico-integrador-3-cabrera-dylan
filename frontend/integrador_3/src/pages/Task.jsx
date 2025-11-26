@@ -83,8 +83,9 @@ export const Task = () => {
     
   return (
     <>
+    <div className="p-10 min-h-screen bg-blue-200">
     {tasks.map((task) => (
-        <div className="flex justify-around" key={task.id}>
+        <div className="flex justify-around bg-" key={task.id}>
             <h3> Title: {task.title} </h3>
             <h3> Description: {task.description} </h3>
             <h3> Estado: {task.is_completed ? "Completada" : "Pendiente"} </h3>
@@ -108,6 +109,7 @@ export const Task = () => {
             </>)}
 
     <button> <Link to="/createtasks"> Crear nueva tarea </Link> </button>
+    </div>
     </>
   )
 }

@@ -37,12 +37,18 @@ export const Login = () => {
 
 
   return (
-    <form onSubmit={handleLogin}>
-        <label htmlFor="username"> Username </label>
-        <input type="text" name="username" value={form.username} onChange={handleChange}/>
-        <label htmlFor="password"> Password </label>
-        <input type="text" name="password" value={form.password} onChange={handleChange} />
-        <button> Envíar </button>
-    </form>
+    <div className=" flex  justify-center h-110 p-20">
+        <form className="bg-gray-200 rounded-md p-5" onSubmit={handleLogin}>
+            <label className="font-medium " htmlFor="username"> Username </label>
+            <br />
+            <input className="border h-8 m-5 rounded" type="text" name="username" value={form.username} onChange={handleChange}/>
+            <br />
+            <label className="font-medium" htmlFor="password"> Password </label>
+            <br />
+            <input className="border h-8 m-5 rounded" type="text" name="password" value={form.password} onChange={handleChange} />
+            <br />
+            <button className="flex hover:bg-blue-700 text-white  place-self-center m-5 border border-black rounded-lg p-1 bg-blue-600 "> Envíar </button>
+        </form>
+    </div>
   )
 }
